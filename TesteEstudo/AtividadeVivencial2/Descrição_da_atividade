@@ -1,0 +1,88 @@
+Contextualização:
+
+Uma empresa de gestão de cursos deseja criar um sistema simples para controle de seus
+cursos e alunos. O sistema deverá ser capaz de gerenciar diferentes tipos de cursos, os
+alunos cadastrados e as notas obtidas pelos alunos.
+Ajuste inicial da atividade
+Para demonstrar o funcionamento do sistema, devem ser cadastrados no mínimo 3 cursos e
+5 alunos.
+
+Cada aluno deve estar matriculado em apenas um curso, mas pode possuir várias notas
+dentro desse curso, que devem ser armazenadas em um vetor de notas.
+O conjunto de dados utilizado na atividade deve garantir que existam alunos matriculados
+em cursos diferentes, de forma que o sistema demonstre o funcionamento com mais de um
+tipo de curso.
+
+Enunciado e Requisitos
+
+1) Crie a classe abstrata Curso
+• Atributos: int id, String nome, double precoBase
+• Construtor que inicialize todos os atributos.
+• Métodos getters.
+• Método abstrato: double calcularPrecoFinal().
+• Método toString() que exiba o id, nome e o precoBase.
+
+2) Crie as classes que estendem Curso
+a) CursoPresencial
+• Atributos extras: String local, int cargaHoraria.
+• O preço final é o preço base + 20 reais por hora/aula (exemplo: se a carga horária for 20
+horas, o preço final será o preço base + 400).
+• Sobrescreva calcularPrecoFinal() fazendo os ajustes necessários.
+• Sobrescreva toString() para exibir todas as informações e o valor do preço final.
+b) CursoOnline
+• Atributos extras: String plataforma, boolean possuiSuporte.
+• O preço final é o preço base + 100 reais se possuiSuporte for verdadeiro.
+• Sobrescreva calcularPrecoFinal().
+• Sobrescreva toString() para exibir todas as informações e o valor do preço final.
+
+3) Crie a interface Avaliavel
+• Método: double calcularMedia()
+• Esse método deverá calcular e retornar a média das notas.
+• A interface Avaliavel deve ser implementada pela classe Aluno.
+
+4) Crie a classe Aluno
+• Atributos: int id, String nome, Curso cursoMatriculado, double[] notas.
+• Construtor que inicialize os atributos.
+• Implementar o método double calcularMedia() que calcula a média simples das notas do
+aluno.
+• Método toString() que exiba o nome do aluno, o curso e a média final.
+
+5) Crie a classe SistemaGestaoCursos
+Atributos:
+• Curso[] cursos (máximo 10 cursos).
+• Aluno[] alunos (máximo 20 alunos).
+• int qtdCursos, int qtdAlunos.
+Métodos:
+• void adicionarCurso(Curso curso)
+• void adicionarAluno(Aluno aluno)
+• void listarCursos()
+• void listarAlunos()
+
+6) Exceções Personalizadas
+A atividade deve apresentar tratamento de erro.
+Crie duas exceções personalizadas:
+• CursoNaoEncontradoException
+• LimiteCadastroException
+Situações em que devem ser usadas:
+CursoNaoEncontradoException
+• Deve ser usada quando o aluno for associado a um curso que não existe no sistema.
+LimiteCadastroException
+• Deve ser usada quando tentar adicionar curso além do limite do array.
+• Deve ser usada quando tentar adicionar aluno além do limite do array.
+Observação: Pode-se usar try-catch na classe principal para tratar essas situações e exibir
+mensagens amigáveis no console.
+
+7) Na classe e1 (main)
+1. Cadastrar alguns cursos.
+2. Cadastrar alguns alunos.
+3. Mostrar no console:
+ - Os cursos com seu preço final.
+ - Os alunos com sua média final.
+Importante:
+Os dados podem ser:
+• Digitados com Scanner; ou
+• Previamente definidos no código.
+
+8) Desafio Extra (opcional)
+Na listagem dos cursos, exibir também a média das notas dos alunos matriculados naquele
+curso.

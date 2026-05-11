@@ -1,0 +1,11 @@
+O Alimento mais caro é Fondue. Preço = 19.9
+O eletrodomestico mais barato é Torradeira. Preço = 360.1
+
+Produtos de vestuário:
+Camiseta. Preço = 17.9
+Calca. Preço = 69.9
+Bermuda. Preço = 29.9
+Casaco. Preço = 78.64
+Moleton. Preço = 27.5
+Gravata. Preço = 70.3
+Camiseta. Preço = 45.6
