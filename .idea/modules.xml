@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/1.iml" filepath="$PROJECT_DIR$/.idea/1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Listas_de_Exercícios/ArraysBidimensionais/ArraysBidimensionais.iml" filepath="$PROJECT_DIR$/Listas_de_Exercícios/ArraysBidimensionais/ArraysBidimensionais.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AtividadeVivencial2/AtividadeVivencial2.iml" filepath="$PROJECT_DIR$/AtividadeVivencial2/AtividadeVivencial2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Listas_de_Exercícios/ClassesAbstratas_Exercicio/ClassesAbstratas_Exercicio.iml" filepath="$PROJECT_DIR$/Listas_de_Exercícios/ClassesAbstratas_Exercicio/ClassesAbstratas_Exercicio.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Listas_de_Exercícios/ExercicioArquivos/ExercicioArquivos.iml" filepath="$PROJECT_DIR$/Listas_de_Exercícios/ExercicioArquivos/ExercicioArquivos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Listas_de_Exercícios/ExerciciosRecursaoLista2/ExerciciosRecursaoLista2.iml" filepath="$PROJECT_DIR$/Listas_de_Exercícios/ExerciciosRecursaoLista2/ExerciciosRecursaoLista2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Listas_de_Exercícios/ExerciciosRecursao_Lista1/ExerciciosRecursao_Lista1.iml" filepath="$PROJECT_DIR$/Listas_de_Exercícios/ExerciciosRecursao_Lista1/ExerciciosRecursao_Lista1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Listas_de_Exercícios/ListasSequenciais_Lista/ListasSequenciais_Lista.iml" filepath="$PROJECT_DIR$/Listas_de_Exercícios/ListasSequenciais_Lista/ListasSequenciais_Lista.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Listas_de_Exercícios/Listas_de_Exercícios.iml" filepath="$PROJECT_DIR$/Listas_de_Exercícios/Listas_de_Exercícios.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Listas_de_Exercícios/MetodosDeOrdenacao_Lista/MetodosDeOrdenacao_Lista.iml" filepath="$PROJECT_DIR$/Listas_de_Exercícios/MetodosDeOrdenacao_Lista/MetodosDeOrdenacao_Lista.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Listas_de_Exercícios/MetodosDePesquisa_Lista/MetodosDePesquisa_Lista.iml" filepath="$PROJECT_DIR$/Listas_de_Exercícios/MetodosDePesquisa_Lista/MetodosDePesquisa_Lista.iml" />
+    </modules>
+  </component>
+</project>
