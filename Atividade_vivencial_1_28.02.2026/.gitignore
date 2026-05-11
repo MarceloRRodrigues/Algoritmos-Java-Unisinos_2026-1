@@ -28,17 +28,3 @@ bin/
 
 ### Mac OS ###
 .DS_Store
-
-# IntelliJ
-.idea/
-*.iml
-
-# Build
-out/
-build/
-
-# Java
-*.class
-
-#Arquivos
-C:\Users\Marcelo Rodrigues\Documents\GitHub\JavaUnisinos_2026\1\Listas_de_Exercícios\TiposGenericosTeste
