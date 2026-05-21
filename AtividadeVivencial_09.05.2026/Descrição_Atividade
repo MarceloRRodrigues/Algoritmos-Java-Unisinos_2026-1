@@ -1,0 +1,259 @@
+Atividade Vivencial — TAD Lista, Ordenação e Pesquisa Binária
+
+Nesta atividade, vamos trabalhar conceitos importantes vistos na AA:
+• TAD (Tipo Abstrato de Dados);
+• Generics;
+• Lista sequencial com alocação estática;
+• Ordenação;
+• Pesquisa binária.
+
+O objetivo é utilizar uma estrutura de lista genérica para armazenar e manipular objetos do tipo Candidato.
+
+-Contexto-
+Considere um sistema simples de pesquisa eleitoral.
+Cada candidato possui:
+• número do candidato;
+• primeiro nome;
+• partido;
+• quantidade de intenções de voto.
+
+O número do candidato deve ser único.
+
+-Objetivo-
+Criar um programa em Java que:
+1. implemente um TAD Lista usando interface e generics;
+2. implemente uma lista sequencial estática;
+3. armazene objetos do tipo Candidato;
+4. gere candidatos automaticamente;
+5. ordene os candidatos pelo número;
+6. realize pesquisa binária pelo número do candidato.
+
+-Parte 1 — Interface do TAD Lista-
+O professor fornecerá a seguinte interface:
+public interface List<E> {
+ public int numElements();
+ public boolean isEmpty();
+ public boolean isFull();
+ public void insert(E element, int pos);
+ public E remove(int pos);
+ public E get(int pos);
+ public int search(E element);
+}
+Essa interface representa o TAD Lista.
+O estudante não deve alterar a interface.
+
+-Parte 2 — Classe StaticList<E>-
+Criar a classe:
+public class StaticList<E> implements List<E>
+A implementação deverá seguir o modelo estudado em aula.
+
+A estrutura deverá possuir:
+protected E[] elements;
+protected int numElements;
+
+A classe deverá iniciar com a seguinte estrutura base:
+public class StaticList<E> implements List<E> {
+ protected E[] elements;
+ protected int numElements;
+ public StaticList(int maxSize) {
+ elements = (E[]) new Object[maxSize];
+ numElements = 0;
+ }
+ public int numElements() {
+ }
+ public boolean isEmpty() {
+ }
+ public boolean isFull() {
+ }
+}
+
+-Importante:-
+Essa estrutura NÃO está completa.
+O estudante deverá:
+• completar os métodos apresentados;
+• implementar os demais métodos da interface;
+• implementar os métodos necessários para ordenação;
+• implementar os métodos necessários para pesquisa binária.
+
+-Métodos obrigatórios da lista-
+A classe StaticList<E> deve implementar corretamente:
+insert(E element, int pos)
+remove(int pos)
+get(int pos)
+search(E element)
+Além disso, a estrutura deverá possuir:
+• construtor;
+• controle de quantidade de elementos;
+• verificação de lista cheia;
+• verificação de lista vazia.
+
+A implementação deve utilizar array interno.
+
+Não é permitido utilizar:
+• ArrayList;
+• LinkedList;
+• estruturas prontas da linguagem.
+
+-Parte 3 — Classe Candidato-
+Criar a classe:
+Candidato
+A classe deve possuir os atributos:
+private int numero;
+private String nome;
+private String partido;
+private int intencoesVoto;
+
+A classe deve conter:
+• construtor recebendo todos os atributos;
+• métodos get;
+• método toString().
+
+-Parte 4 — Classe PrincipalCandidatos-
+Criar a classe:
+PrincipalCandidatos
+
+Nesta classe deverá existir o método:
+public static void main(String[] args)
+
+-Parte 5 — Criação dos candidatos-
+No main, criar uma lista de candidatos utilizando:
+StaticList<Candidato> candidatos = new StaticList<Candidato>(tamanho);
+ou:
+List<Candidato> candidatos = new StaticList<Candidato>(tamanho);
+A lista deverá possuir tamanho de até 20.
+Os candidatos devem ser gerados automaticamente.
+
+Exemplo de listas auxiliares:
+String[] nomes = {"Ana", "Pedro", "Lucas", "Maria", "Joao", "Carla"};
+String[] partidos = {"AAA", "BBB", "CCC", "DDD"};
+As intenções de voto devem ser sorteadas.
+
+O número do candidato deve ser único. Para simplificar a geração dos dados e garantir que a ordenação seja
+necessária, os candidatos devem ser inseridos inicialmente em ordem decrescente de número. O primeiro
+candidato inserido vai ser o 20, o segundo o 19, ...
+
+Importante:
+• não é necessário ler candidatos pelo teclado;
+• o programa deve gerar os dados automaticamente;
+• nomes e partidos podem se repetir;
+• números de candidatos não podem se repetir.
+
+-Parte 6 — Impressão da lista-
+O programa deve imprimir:
+Candidatos antes da ordenação:
+Depois, deve imprimir:
+Candidatos após a ordenação:
+
+-Parte 7 — Ordenação-
+A ordenação deverá ser implementada utilizando EXCLUSIVAMENTE:
+• Inserção Direta;
+ou
+• Seleção Direta.
+Não é permitido utilizar:
+Arrays.sort()
+Collections.sort()
+ou qualquer método pronto de ordenação.
+A ordenação deve ser implementada na estrutura StaticList<E>.
+
+Exemplo:
+public void insertionSortCandidatos()
+ou:
+public void selectionSortCandidatos()
+
+Critério de ordenação
+Os candidatos devem ser ordenados pelo número do candidato, em ordem crescente.
+Exemplo:
+12 - Ana - Partido AAA - 350 votos
+15 - Pedro - Partido BBB - 120 votos
+22 - Maria - Partido CCC - 700 votos
+
+-Parte 8 — Pesquisa binária-
+Implementar na estrutura um método de pesquisa binária:
+public int pesquisaBinariaCandidatos(int numero)
+O método deve:
+• pesquisar candidatos pelo número;
+• retornar a posição encontrada;
+• retornar -1 caso não exista candidato com aquele número.
+A pesquisa binária deve funcionar sobre a lista já ordenada pelo número.
+
+-Parte 9 — Teste da pesquisa-
+Após ordenar os candidatos:
+• realizar uma pesquisa binária;
+• imprimir o candidato encontrado.
+Exemplo:
+Número pesquisado: 15
+Candidato encontrado:
+15 - Pedro - Partido BBB - 120 votos
+ou:
+Número pesquisado: 99
+Candidato não encontrado.
+
+O número pesquisado pode ser:
+• sorteado;
+• definido diretamente no código;
+• escolhido a partir de um candidato já existente na lista.
+Não é obrigatório ler dados pelo teclado.
+
+-Desafio bônus-
+Se terminar antes:
+• mostrar a quantidade de comparações realizadas na ordenação;
+• mostrar a quantidade de trocas realizadas;
+• permitir ordenar por outro critério como nome;
+• implementar os dois métodos de ordenação: Inserção Direta e Seleção Direta.
+Critérios de avaliação — 0,5 pontos
+0,1 — TAD Lista e Generics
+• interface List<E> utilizada corretamente;
+• classe StaticList<E> implementada corretamente;
+• uso correto de generics.
+0,1 — Funcionamento da lista
+• inserção funcionando;
+• remoção funcionando;
+• acesso aos elementos funcionando;
+• controle correto de lista cheia e lista vazia.
+0,1 — Classe Candidato e geração dos dados
+• classe Candidato criada corretamente;
+• atributos corretos;
+• construtor;
+• métodos get;
+• método toString();
+• candidatos gerados automaticamente.
+0,1 — Ordenação
+• uso correto de Inserção Direta ou Seleção Direta;
+• ordenação pelo número do candidato;
+• não utilização de métodos prontos de ordenação.
+0,1 — Pesquisa binária e resultado final
+• pesquisa binária pelo número funcionando;
+• retorno correto da posição ou -1;
+• impressão adequada dos resultados.
+
+-Penalizações-
+Código que não compila → nota máxima 0,25.
+Código sem uso da estrutura StaticList<E> → nota máxima 0,25.
+Código usando ArrayList, LinkedList ou estruturas prontas → nota máxima 0,25.
+Código sem método de ordenação solicitado → nota máxima 0,25.
+Código usando métodos prontos de ordenação → nota máxima 0,25.
+Código sem pesquisa binária → nota máxima 0,35.
+Código que pesquisa por um campo diferente do campo usado na ordenação → nota máxima 0,35.
+Falta dos nomes dos integrantes nos arquivos .java → nota máxima 0,25.
+Forma de entrega
+
+A atividade deverá ser enviada por meio da tarefa disponibilizada no Moodle, no formato envio de arquivo
+único.
+
+Os estudantes deverão:
+• compactar todos os arquivos do projeto em um único arquivo .zip;
+• incluir obrigatoriamente todos os arquivos-fonte .java;
+• garantir que o projeto esteja completo e organizado.
+
+O nome do arquivo .zip deverá seguir o padrão:
+IDE_Tarefa_Nome1_Nome2.zip
+Exemplos:
+Eclipse_Tarefa_Pedro_Lucas.zip
+BlueJ_Tarefa_Marcos_Ana.zip
+IntelliJ_Tarefa_Carla_Joao.zip
+
+É obrigatório indicar no nome do arquivo a IDE utilizada.
+Os nomes de todos os integrantes da dupla deverão constar no cabeçalho dos arquivos de código-fonte .java,
+identificados como autores do código.
+Importante: caso os arquivos-fonte .java não sejam enviados, ou o projeto não esteja compactado
+corretamente em um único arquivo .zip, a atividade não será avaliada.
