@@ -113,7 +113,7 @@ public class SinglyLinkedList<E> implements List<E> {
                 current = current.getNext();
             }
             Node<E> removido = current.getNext();
-            current.next = current.getNext().next;
+            current.setNext(current.getNext().getNext());
             numElements--;
             return removido.getElement();
         }
@@ -137,7 +137,7 @@ public class SinglyLinkedList<E> implements List<E> {
         Node<E> current = head;
         for (int i = 0; i < numElements; i++)
         {
-            if(current.getElement() == element) return i; //retorna a posição do elemento
+            if(current.element.equals(element)) return i; //retorna a posição do elemento
             else current = current.getNext();
         }
         return -1; //Elemento não encontrado
@@ -153,5 +153,33 @@ public class SinglyLinkedList<E> implements List<E> {
             current = current.getNext();
         }
         return s;
+    }
+    public SinglyLinkedList<E> split(E divisor)
+    {
+        Node<E> current = head;
+        SinglyLinkedList<E> novaLista = new SinglyLinkedList<>();
+
+        for (int i = 0; i < numElements(); i++)
+        {
+            //se o elemento do nó verificado é igual ao divisor...
+            if(divisor.equals(current.getElement())){
+                Node<E> memory = head; //memoriza o head
+                head = current.getNext(); //agora o head será o próximo nó
+
+                //atualiza o número de elementos da lista original
+                numElements = numElements() - (i+1);
+
+                novaLista.head = memory; //a nova lista começa no antigo head (primeiro elemento da lista original antes do split)
+                novaLista.tail = current; //a nova lista termina no nó current.
+                novaLista.tail.setNext(null); //o tail da nova lista aponta para null, cortando conexão com a lista original
+
+                //atualiza o número de elementos da nova lista
+                novaLista.numElements = i+1;
+                break;
+            }
+            //avança um nó
+            current = current.getNext();
+        }
+        return novaLista;
     }
 }
