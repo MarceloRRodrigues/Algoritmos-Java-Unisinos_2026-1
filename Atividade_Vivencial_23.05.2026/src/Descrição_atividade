@@ -1,0 +1,107 @@
+ATIVIDADE VIVENCIAL 5 — ESTRUTURA ENCADEADA
+
+Nesta atividade, vamos trabalhar conceitos importantes vistos na disciplina:
+• Estruturas encadeadas;
+• Nós (Node);
+• Manipulação de ponteiros;
+• Remoção de elementos;
+• Simulação utilizando estruturas de dados.
+
+O objetivo é implementar uma estrutura que simule a brincadeira "O limão entrou na roda".
+
+Contexto
+Uma brincadeira clássica entre crianças é "O limão entrou na roda".
+Todos formam uma roda e um objeto é passado entre os participantes. Quando a música termina,
+quem estiver com o objeto sai da roda. A brincadeira continua até restar apenas uma pessoa.
+Seu trabalho será implementar esta brincadeira utilizando estrutura encadeada.
+
+Objetivo
+• implementar a estrutura
+• utilizar nós para representar participantes
+• simular passagem do objeto
+• remover participantes
+• identificar corretamente o vencedor
+
+Parte 1 — Classe Pessoa
+Criar a classe Pessoa com os atributos:
+private String nome;
+private int idade;
+Criar construtor, métodos get, métodos set (caso necessário) e toString().
+
+Parte 2 — Classe LimaoEntrouNaRoda
+Criar a estrutura principal da brincadeira.
+A estrutura deve possuir atributos equivalentes a:
+private Node inicio;
+private int quantidade;
+Cada nó deve armazenar um objeto Pessoa.
+Não utilizar ArrayList, LinkedList ou estruturas prontas.
+
+Parte 3 — Construtor
+Receber a quantidade de participantes e criar automaticamente a estrutura.
+
+Parte 4 — Método passaObjeto
+public int passaObjeto(int x)
+Deve simular a passagem do objeto e retornar a posição em que ele parou.
+
+Parte 5 — Método removePosicao
+public Pessoa removePosicao(int x)
+Deve remover corretamente o participante, atualizar ponteiros e retornar a vencedora quando restar
+apenas uma pessoa.
+
+Parte 6 — Classe Principal
+Exemplo de main para testar a estrutura criada:
+public static void main(String[] args) {
+ LimaoEntrouNaRoda l = new LimaoEntrouNaRoda(10);
+ l.imprimeRoda();
+ System.out.println("*****");
+ boolean acabou = false;
+ Pessoa p = null;
+ while (!acabou) {
+ int posicao = l.passaObjeto(14);
+ p = l.removePosicao(posicao);
+ l.imprimeRoda();
+ System.out.println("************");
+ acabou = p != null;
+ }
+ System.out.println(p);
+}
+
+O professor poderá utilizar uma classe de teste própria para validação da estrutura implementada.
+
+Critérios de avaliação — 1,0 ponto
+0,15 — Classe Pessoa
+• atributos corretos;
+• construtor;
+• métodos get;
+• método toString().
+0,20 — Estrutura encadeada circular
+• criação correta dos nós;
+• encadeamento circular funcionando;
+• ponteiro de início correto;
+• controle correto da quantidade de elementos.
+0,20 — Construtor da estrutura
+• criação automática dos participantes;
+• montagem correta da roda;
+• estrutura inicia corretamente.
+0,15 — Método passaObjeto(int x)
+• deslocamento correto pela estrutura;
+• funcionamento circular;
+• retorno correto da posição.
+0,20 — Método removePosicao(int x)
+• remoção correta;
+• atualização dos ponteiros;
+• atualização do início;
+• retorno correto da pessoa vencedora.
+0,10 — Simulação final (PrincipalLimao)
+• execução completa;
+• funcionamento com a main fornecida;
+• impressão adequada dos resultados.
+Total: 1,0 ponto
+
+Penalizações
+• Código que não compila → nota máxima 0,50
+• Código usando ArrayList, LinkedList ou estruturas prontas → nota máxima 0,50
+• Código sem funcionamento correto da estrutura → nota máxima 0,50
+• Código sem método passaObjeto → nota máxima 0,75
+• Código sem método removePosicao → nota máxima 0,75
+• Falta do nome completo dos integrantes nos arquivos .java → nota máxima 0,75
