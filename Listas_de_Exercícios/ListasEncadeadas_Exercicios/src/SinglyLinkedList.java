@@ -120,6 +120,7 @@ public class SinglyLinkedList<E> implements List<E> {
     }
 
     public E get(int pos) throws IndexOutOfBoundsException{
+        //Se a lista estiver vazia, informará posição inválida.
         if (pos < 0  ||  pos >= numElements) throw new IndexOutOfBoundsException("Posição Inválida!");
 
         Node<E> current = head;

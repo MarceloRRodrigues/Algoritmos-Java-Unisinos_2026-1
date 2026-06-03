@@ -1,4 +1,4 @@
-package PACKAGE_NAME;
+public class Exercicio5
+{
 
-public class Exercicio5 {
 }
